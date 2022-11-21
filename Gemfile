@@ -32,6 +32,10 @@ gem 'devise'
 # gem generates the QR code and allows the user to download it
 gem 'rqrcode'
 
+gem 'barby'
+
+
+
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass', '~> 5.6.1'
 gem 'simple_form', github: 'heartcombo/simple_form'
@@ -64,3 +68,5 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem "chunky_png", "~> 1.4"

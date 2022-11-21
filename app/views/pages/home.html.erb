@@ -1,14 +1,10 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
-<h1>QR code generator</h1>
 
-<%= form_tag :qr_code_download, method: :get do |f| %>
-  <div class="field">
-    <%= label_tag 'Text or URL' %>
-    <%= text_field_tag :content, nil, required: true %>
-  </div>
+<!-- <%=link_to "/tickets/new", class:"start-here" do %>
+<button> QR CODE </button>
+<%end%> -->
 
-  <div class="actions">
-    <%= submit_tag 'Generate QR code' %>
-  </div>
-<% end %>
+
+
+<%= link_to 'Sign Up', new_user_registration_path %>

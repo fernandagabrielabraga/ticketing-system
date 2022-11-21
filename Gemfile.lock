@@ -72,6 +72,7 @@ GEM
       public_suffix (>= 2.0.2, < 6.0)
     autoprefixer-rails (10.2.5.0)
       execjs (< 2.8.0)
+    barby (0.6.8)
     bcrypt (3.1.18)
     bindex (0.8.1)
     bootsnap (1.13.0)
@@ -253,9 +254,11 @@ PLATFORMS
 
 DEPENDENCIES
   autoprefixer-rails (= 10.2.5)
+  barby
   bootsnap (>= 1.4.4)
   byebug
   capybara (>= 3.26)
+  chunky_png (~> 1.4)
   devise
   dotenv-rails
   font-awesome-sass (~> 5.6.1)
