@@ -34,7 +34,14 @@ gem 'rqrcode'
 
 gem 'barby'
 
+group :development do
+  gem "better_errors"
+  gem "binding_of_caller"
+end
 
+gem "bootstrap", "~> 5.0"
+
+gem "bootstrap_form", "~> 5.1"
 
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass', '~> 5.6.1'

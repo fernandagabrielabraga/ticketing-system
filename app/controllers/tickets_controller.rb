@@ -1,18 +1,45 @@
 
 class TicketsController < ApplicationController
 
-  def show
-    @ticket = Ticket
-    
+  def index
+    @tickets = Ticket.all.order("created_at DESC")
+  end
 
+  def new
+    @ticket = Ticket.new
+  end
 
-    @qrcode = RQRCode::QRCode.new("https://dev.to/")
-    @svg = @qrcode.as_svg(
-      offset: 0,
-      color: '000',
-      shape_rendering: 'crispEdges',
-      module_size: 6
-    )
+  def create #action to create it does not have a view
+    @ticket = Ticket.new(ticket_params)
+
+    if @ticket.save
+      redirect_to tickets_path
+    else
+      render 'new'
+    end
+
+  end
+
+  def edit
+    @ticket = Ticket.find(params[:id])
+  end
+
+  def update
+    @ticket = Ticket.find(params[:id])
+    @ticket.update(ticket_params)
+    redirect_to tickets_path
+  end
+
+  def destroy
+    @ticket = Ticket.find(params[:id])
+    @ticket.destroy
+    redirect_to tickets_path, status: :see_other
+  end
+
+  private
+
+  def ticket_params
+    params.require(:ticket).permit(:name, :email, :address, :phone)
   end
 
 end

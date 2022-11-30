@@ -1,0 +1,10 @@
+
+<%= simple_form_for @ticket do |f| %>
+
+  <%= f.input :name, label: 'Full name', error: 'Full name is mandatory' %>
+  <%= f.input :email, label: 'e-mail' %>
+  <%= f.input :address, label: 'address' %>
+  <%= f.input :phone, label: 'phone' %>
+  <%= f.button :submit %>
+
+<% end %>

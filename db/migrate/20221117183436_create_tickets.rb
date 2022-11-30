@@ -6,7 +6,7 @@ class CreateTickets < ActiveRecord::Migration[6.1]
       t.string :address
       t.string :phone
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end

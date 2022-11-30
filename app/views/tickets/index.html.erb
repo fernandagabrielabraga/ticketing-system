@@ -1,0 +1,12 @@
+<p>
+  <%= link_to "Create New Ticket Item", new_ticket_path %>
+</p>
+
+
+
+<% @tickets.each do |ticket| %>
+  <h2><%= ticket.name %></h2>
+  <p><%= ticket.email %></p>
+  <p><%= ticket.address %></p>
+  <p><%= ticket.phone %></p>
+<% end%>
