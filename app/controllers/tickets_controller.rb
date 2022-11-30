@@ -1,8 +1,12 @@
 
 class TicketsController < ApplicationController
+  before_action :find_ticket, only: [:show, :edit, :update, :destroy]
 
   def index
     @tickets = Ticket.all.order("created_at DESC")
+  end
+
+  def show
   end
 
   def new
@@ -21,25 +25,24 @@ class TicketsController < ApplicationController
   end
 
   def edit
-    @ticket = Ticket.find(params[:id])
   end
 
   def update
-    @ticket = Ticket.find(params[:id])
-    @ticket.update(ticket_params)
-    redirect_to tickets_path
+
   end
 
   def destroy
-    @ticket = Ticket.find(params[:id])
-    @ticket.destroy
-    redirect_to tickets_path, status: :see_other
+
   end
 
   private
 
   def ticket_params
     params.require(:ticket).permit(:name, :email, :address, :phone)
+  end
+
+  def find_ticket
+    @ticket = Ticket.find(params[:id])
   end
 
 end
